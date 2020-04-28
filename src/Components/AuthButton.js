@@ -29,12 +29,18 @@ const AuthButton = ({ user, logout }) => {
     console.log(user, "user.username");
     buttons = (
       <>
-        <span style={{ color: "ffea32" }} className="nav-link shadow">
-          {user.username}
-        </span>
-        <li className="nav-item">
+        <li key="dashboardButton" className="nav-item font-weight-bold">
+          <Link
+            style={{ color: "#ffea32", fontSize: "1.2rem" }}
+            to="/dashboard"
+            className="nav-link"
+          >
+            Dashboard
+          </Link>
+        </li>
+        <li className="nav-item font-weight-bold">
           <span
-            style={{ color: "#ffc107" }}
+            style={{ color: "#ffea32", fontSize: "1.2rem" }}
             className="nav-link"
             onClick={logout}
           >

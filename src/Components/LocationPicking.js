@@ -12,7 +12,7 @@ class LocationPicking extends Component {
     super(props);
 
     this.state = {
-      address: "Amman",
+      address: "Al-Urdon St. 265, Amman, Jordan",
       position: {
         lat: 0,
         lng: 0,

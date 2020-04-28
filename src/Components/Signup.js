@@ -10,7 +10,6 @@ import LocationPicking from "./LocationPicking";
 // import { connect } from "react-redux";
 // import { Redirect } from "react-router-dom";
 
-
 class Signup extends Component {
   state = {
     username: "",
@@ -109,7 +108,6 @@ class Signup extends Component {
                 I already have an account
               </Link>
             </form>
-            <LocationPicking />
           </div>
         </div>
       </div>
