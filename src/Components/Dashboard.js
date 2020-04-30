@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import LocationPicking from "./LocationPicking";
 
 class Dashboard extends Component {
+  componentDidMount() {
+    console.log(this.props.user.address);
+  }
   render() {
     return (
       <div>
@@ -20,9 +23,11 @@ class Dashboard extends Component {
               Email:{this.props.user.address}
             </h3>
 
-            <button type="button" className="btn btn-outline-info mt-4">
-              Add Child
-            </button>
+            <Link to="/addchild">
+              <button type="button" className="btn btn-outline-info mt-4">
+                Add Child
+              </button>
+            </Link>
           </div>
           <div className="box">
             <LocationPicking />

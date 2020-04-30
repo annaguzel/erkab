@@ -32,7 +32,7 @@ class Signup extends Component {
     return (
       <div className="col-6 mx-auto">
         <div className="card my-5">
-          <div className="card-body">
+          <div className="card-body text-center">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="username">Username</label>
@@ -99,13 +99,15 @@ class Signup extends Component {
               <button type="submit" className="btn btn-info">
                 Signup
               </button>
-              <Link
-                style={{ color: "#ffc107" }}
-                to="/login"
-                className="btn btn-link my-2 my-sm-0"
-              >
-                I already have an account
-              </Link>
+              <p>
+                <Link
+                  style={{ color: "#ffc107" }}
+                  to="/login"
+                  className="btn btn-link my-2 my-sm-0"
+                >
+                  I already have an account
+                </Link>
+              </p>
             </form>
           </div>
         </div>

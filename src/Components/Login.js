@@ -24,10 +24,12 @@ class Login extends Component {
     return (
       <div className="col-6 mx-auto">
         <div className="card my-5">
-          <div className="card-body">
+          <div className="card-body text-center">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <label htmlFor="username">Username</label>
+                <label className="ml-3" htmlFor="username">
+                  Username
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -39,7 +41,9 @@ class Login extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Password</label>
+                <label className="ml-3" htmlFor="password">
+                  Password
+                </label>
                 <input
                   type="password"
                   className="form-control"
@@ -54,13 +58,15 @@ class Login extends Component {
               <button type="submit" className="btn btn-info">
                 Login
               </button>
-              <Link
-                style={{ color: "#ffc107" }}
-                to="/signup"
-                className="btn btn-link my-2 my-sm-0"
-              >
-                Signup for an account
-              </Link>
+              <p>
+                <Link
+                  style={{ color: "#ffc107" }}
+                  to="/signup"
+                  className="btn btn-link my-2 my-sm-0"
+                >
+                  Signup for an account
+                </Link>
+              </p>
             </form>
           </div>
         </div>
