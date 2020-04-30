@@ -5,6 +5,8 @@ import { signup } from "../store/actions";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
+/// remove these commented lines
+
 // import { signup } from "../store/actions";
 // import { connect } from "react-redux";
 // import { Redirect } from "react-router-dom";

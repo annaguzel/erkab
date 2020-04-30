@@ -10,7 +10,7 @@ class NavBar extends Component {
       <header>
         <Navbar collapseOnSelect expand="lg">
           <Navbar.Brand>
-            <Link to={"/"} className="navbar-brand">
+            <Link to="/" className="navbar-brand">
               <img className="logo d-inline" src={logo} alt="" />
             </Link>
           </Navbar.Brand>
@@ -26,7 +26,7 @@ class NavBar extends Component {
                 >
                   About Us
                 </Link>
-              </li>{" "}
+              </li>
               <li key="signupButton" className="nav-item">
                 <Link
                   style={{ color: "#ffea32", fontSize: "1.2rem" }}
