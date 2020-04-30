@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "../App.css";
+
+import { connect } from "react-redux";
 import LocationPicking from "./LocationPicking";
 
 class Dashboard extends Component {
@@ -8,9 +9,12 @@ class Dashboard extends Component {
       <div>
         <div className="container mt-5">
           <div className="image">
-            <h3 className="display-3 title">ErKab</h3>
+            <h3 className="display-4 title">My Dashboard:</h3>
             <h3 className="display-6 mt-3 title">
-              Your new solution for affordable school busses
+              User:{this.props.user.username}
+            </h3>
+            <h3 className="display-6 mt-3 title">
+              Email:{this.props.user.email}
             </h3>
 
             <button type="button" className="btn btn-outline-info mt-4">
@@ -26,4 +30,8 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+const mapStateToProps = ({ user }) => ({
+  user,
+});
+
+export default connect(mapStateToProps)(Dashboard);

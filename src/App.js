@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
+import "./css/Style.css";
 import Dashboard from "./Components/Dashboard";
 
 function App() {

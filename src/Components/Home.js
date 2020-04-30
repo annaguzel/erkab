@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+
 import bus from "../images/bus.png";
 
 class Home extends Component {

@@ -5,7 +5,6 @@ import { signup } from "../store/actions";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import LocationPicking from "./LocationPicking";
 // import { signup } from "../store/actions";
 // import { connect } from "react-redux";
 // import { Redirect } from "react-router-dom";

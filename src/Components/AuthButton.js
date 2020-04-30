@@ -26,7 +26,6 @@ const AuthButton = ({ user, logout }) => {
     </li>,
   ];
   if (user) {
-    console.log(user, "user.username");
     buttons = (
       <>
         <li key="dashboardButton" className="nav-item font-weight-bold">
@@ -35,7 +34,7 @@ const AuthButton = ({ user, logout }) => {
             to="/dashboard"
             className="nav-link"
           >
-            Dashboard
+            {user.username}
           </Link>
         </li>
         <li className="nav-item font-weight-bold">
