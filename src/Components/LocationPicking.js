@@ -11,6 +11,7 @@ const defaultPosition = {
 };
 
 class LocationPicking extends Component {
+  // you can do away with the constructor entirely.
   constructor(props) {
     super(props);
 
@@ -21,6 +22,8 @@ class LocationPicking extends Component {
         lng: 0,
       },
     };
+
+    // you can define this method outside the constructor with the `this.` part.
     this.submitAddress = () => {
       console.log(this.state.position);
       this.props.addAddress(this.state.position);
@@ -29,6 +32,8 @@ class LocationPicking extends Component {
     this.handleLocationChange = this.handleLocationChange.bind(this);
   }
 
+  // you don't need to bind this method (as you did in the last line in the constructor)
+  // if you define it as an arrow method like we usually do.
   handleLocationChange({ position, address }) {
     // Set new location
     this.setState({ position, address });
