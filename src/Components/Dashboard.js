@@ -16,6 +16,9 @@ class Dashboard extends Component {
             <h3 className="display-6 mt-3 title">
               Email:{this.props.user.email}
             </h3>
+            <h3 className="display-6 mt-3 title">
+              Email:{this.props.user.address}
+            </h3>
 
             <button type="button" className="btn btn-outline-info mt-4">
               Add Child

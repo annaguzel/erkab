@@ -29,7 +29,7 @@ class LocationPicking extends Component {
     this.handleLocationChange = this.handleLocationChange.bind(this);
   }
 
-  handleLocationChange({ position, address, places }) {
+  handleLocationChange({ position, address }) {
     // Set new location
     this.setState({ position, address });
   }
