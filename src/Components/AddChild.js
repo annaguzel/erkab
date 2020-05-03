@@ -1,30 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchSchools } from "../store/actions";
+import { addChild } from "../store/actions";
+import { Redirect } from "react-router-dom";
 
 class AddChild extends Component {
   state = {
     name: "",
     dob: "",
-    school: 0,
+    school: "",
   };
 
   handleChange = (event) =>
     this.setState({ [event.target.name]: event.target.value });
 
+  handleRadio = (value) => this.setState({ school: value });
+
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addChild(this.state);
+    this.props.addChild(this.state, this.state.school, this.props.history);
   };
 
   render() {
-    let schools = this.props.schools;
-    let options = schools.map((school) => (
-      <option key={school.id} value={school}>
-        {school.name}
-      </option>
-    ));
-    const { name, dob, school } = this.state;
+    console.log(this.state.school);
     return (
       <div className="col-6 mx-auto text-center">
         <h3 className="display-4">Add Child</h3>
@@ -39,7 +36,7 @@ class AddChild extends Component {
                   type="text"
                   className="form-control"
                   id="name"
-                  value={name}
+                  value={this.state.name}
                   name="name"
                   placeholder="Name"
                   onChange={this.handleChange}
@@ -53,22 +50,25 @@ class AddChild extends Component {
                   type="text"
                   className="form-control"
                   id="dob"
-                  value={dob}
+                  value={this.state.dob}
                   name="dob"
-                  placeholder="yyyy/mm/dd"
+                  placeholder="yyyy-mm-dd"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
-                <select
-                  name="customSearch"
-                  className="custom-search-select"
-                  onChange={this.handleChange}
-                  value={school}
-                >
-                  <option>Select School</option>
-                  {options}
-                </select>
+                {this.props.schools.map((school) => (
+                  <label key={school.name}>
+                    <input
+                      type="radio"
+                      value={school.id}
+                      name="school"
+                      key={school.id}
+                      onChange={(event) => this.handleRadio(event.target.value)}
+                    />
+                    {school.name}
+                  </label>
+                ))}
               </div>
 
               <button type="submit" className="btn btn-info">
@@ -90,7 +90,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchSchools: () => dispatch(fetchSchools()),
+    addChild: (newChild, schoolID, history) =>
+      dispatch(addChild(newChild, schoolID, history)),
   };
 };
 

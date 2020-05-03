@@ -4,6 +4,7 @@ import { SET_CURRENT_USER } from "./actionTypes";
 
 import { setErrors } from "./errors";
 import decode from "jwt-decode";
+import { fetchSchools, fetchChildren } from "./children";
 
 export const checkForExpiredToken = () => (dispatch) => {
   const token = localStorage.getItem("token");
@@ -13,6 +14,8 @@ export const checkForExpiredToken = () => (dispatch) => {
     const user = decode(token);
     if (user.exp >= currentTimeInSeconds) {
       dispatch(setCurrentUser(token));
+      dispatch(fetchSchools());
+      dispatch(fetchChildren());
     }
   } else {
     dispatch(setCurrentUser());
@@ -25,6 +28,8 @@ export const login = (userData) => async (dispatch) => {
     console.log(res, "res");
     const { access } = res.data;
     dispatch(setCurrentUser(access));
+    dispatch(fetchSchools());
+    dispatch(fetchChildren());
   } catch (error) {
     dispatch(setErrors(error));
   }
@@ -34,6 +39,8 @@ export const signup = (userData) => async (dispatch) => {
     const res = await instance.post("/register/", userData);
     const { access } = res.data;
     dispatch(setCurrentUser(access));
+    dispatch(fetchSchools());
+    dispatch(fetchChildren());
   } catch (error) {
     dispatch(setErrors(error));
   }
