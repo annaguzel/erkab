@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LocationPicker from "react-location-picker";
 import { connect } from "react-redux";
-import { addAddress } from "../store/actions";
+import { updateAddress } from "../store/actions";
 // Fontawesome
 
 /* Default position */
@@ -22,8 +22,8 @@ class LocationPicking extends Component {
       },
     };
     this.submitAddress = () => {
-      console.log(this.state.position);
-      this.props.addAddress(this.state.position);
+      console.log(this.props.user.user_id);
+      this.props.updateAddress(this.props.user.user_id, this.state.position);
     };
     // Bind
     this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -37,7 +37,8 @@ class LocationPicking extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.address}</h1>
+        <h1>Set your location:</h1>
+        <h3>Current Address:{this.state.address}</h3>
         <div className="text-center">
           <LocationPicker
             containerElement={<div style={{ height: "100%" }} />}
@@ -50,7 +51,7 @@ class LocationPicking extends Component {
             onClick={() => this.submitAddress()}
             className="btn btn-info mt-4"
           >
-            Add Address
+            Set Address
           </button>
         </div>
       </div>
@@ -61,7 +62,8 @@ const mapStateToProps = ({ user }) => ({
   user,
 });
 const mapDispatchToProps = (dispatch) => ({
-  addAddress: (position) => dispatch(addAddress(position)),
+  updateAddress: (addressID, position) =>
+    dispatch(updateAddress(addressID, position)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LocationPicking);

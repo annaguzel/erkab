@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import bus from "../images/bus.png";
 
 class Home extends Component {
@@ -12,10 +12,11 @@ class Home extends Component {
             <h3 className="display-6 mt-3 title">
               Your new solution for affordable school busses
             </h3>
-
-            <button type="button" className="btn btn-outline-info mt-4">
-              Discover More
-            </button>
+            <Link to="/aboutus">
+              <button type="button" className="btn btn-outline-info mt-4">
+                Discover More
+              </button>
+            </Link>
           </div>
           <div className="box">
             <img className="image" src={bus} alt="" />

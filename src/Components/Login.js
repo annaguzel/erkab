@@ -20,7 +20,7 @@ class Login extends Component {
 
   render() {
     const { username, password } = this.state;
-    if (this.props.user) return <Redirect to="/" />;
+    if (this.props.user) return <Redirect to="/dashboard" />;
     return (
       <div className="col-6 mx-auto">
         <div className="card my-5">

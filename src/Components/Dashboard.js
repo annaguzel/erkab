@@ -4,9 +4,6 @@ import { connect } from "react-redux";
 import LocationPicking from "./LocationPicking";
 
 class Dashboard extends Component {
-  componentDidMount() {
-    console.log(this.props.user.address);
-  }
   render() {
     return (
       <div>
@@ -19,9 +16,7 @@ class Dashboard extends Component {
             <h3 className="display-6 mt-3 title">
               Email:{this.props.user.email}
             </h3>
-            <h3 className="display-6 mt-3 title">
-              Address:{this.props.user.address}
-            </h3>
+
             <h3>My Children:</h3>
 
             {this.props.children.map((child) => (

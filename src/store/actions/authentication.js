@@ -36,9 +36,8 @@ export const login = (userData) => async (dispatch) => {
 };
 export const signup = (userData) => async (dispatch) => {
   try {
-    const res = await instance.post("/register/", userData);
-    const { access } = res.data;
-    dispatch(setCurrentUser(access));
+    await instance.post("/register/", userData);
+    dispatch(login(userData));
     dispatch(fetchSchools());
     dispatch(fetchChildren());
   } catch (error) {

@@ -7,6 +7,7 @@ import Footer from "./Components/Footer";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import AddChild from "./Components/AddChild";
+import AboutUs from "./Components/AboutUs";
 import "./css/Style.css";
 import Dashboard from "./Components/Dashboard";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/addchild" component={AddChild} />
+        <Route path="/aboutus" component={AboutUs} />
         <Route path="/" component={Home} />
         <Redirect to="/dashboard" />
       </Switch>

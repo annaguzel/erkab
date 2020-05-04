@@ -47,7 +47,7 @@ class AddChild extends Component {
                   Date of Birth
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   className="form-control"
                   id="dob"
                   value={this.state.dob}
