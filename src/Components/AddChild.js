@@ -13,6 +13,7 @@ class AddChild extends Component {
   handleChange = (event) =>
     this.setState({ [event.target.name]: event.target.value });
 
+  // receive the entire event object, then get the value from it.
   handleRadio = (value) => this.setState({ school: value });
 
   handleSubmit = (event) => {
@@ -59,11 +60,13 @@ class AddChild extends Component {
               <div className="form-group">
                 {this.props.schools.map((school) => (
                   <label key={school.name}>
+                    {/* move this .map() to outside the return */}
                     <input
                       type="radio"
                       value={school.id}
                       name="school"
                       key={school.id}
+                      {/* no need for arrow function, pass the event object itself */}
                       onChange={(event) => this.handleRadio(event.target.value)}
                     />
                     {school.name}

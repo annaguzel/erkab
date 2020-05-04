@@ -15,6 +15,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ADDRESS:
+      // you don't need this, use UPDATE_ADDRESS instead, since a parent has only one address
       return {
         ...state,
         address: [action.payload, ...state.address],
@@ -23,7 +24,7 @@ const reducer = (state = initialState, action) => {
     case UPDATE_ADDRESS:
       return {
         ...state,
-        address: [action.payload, ...state.address],
+        address: [action.payload, ...state.address], // no need for a list of addresses, each use has a single address, no?
       };
 
     case GET_SCHOOL:
