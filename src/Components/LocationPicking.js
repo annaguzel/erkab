@@ -11,6 +11,9 @@ const defaultPosition = {
 };
 
 class LocationPicking extends Component {
+  // you don't need the constructor here
+  // I think I had notes on this before,
+  // if not, ask me about it.
   constructor(props) {
     super(props);
 

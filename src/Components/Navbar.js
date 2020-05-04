@@ -26,7 +26,7 @@ class NavBar extends Component {
                 >
                   About Us
                 </Link>
-              </li>{" "}
+              </li>
               <li key="signupButton" className="nav-item">
                 <Link
                   style={{ color: "#ffea32", fontSize: "1.2rem" }}

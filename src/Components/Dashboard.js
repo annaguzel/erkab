@@ -5,9 +5,14 @@ import LocationPicking from "./LocationPicking";
 
 class Dashboard extends Component {
   componentDidMount() {
+    //probably shouldn't be here at all
+    // which means this component can be functional
     console.log(this.props.user.address);
   }
   render() {
+    // the children mapping below should be moved out here
+    // If the JSX to display children becomes more complex,
+    // move it to its own component.
     return (
       <div>
         <div className="container mt-5">
