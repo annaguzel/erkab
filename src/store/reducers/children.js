@@ -1,5 +1,4 @@
 import {
-  ADD_ADDRESS,
   UPDATE_ADDRESS,
   GET_SCHOOL,
   ADD_CHILD,
@@ -14,12 +13,6 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_ADDRESS:
-      return {
-        ...state,
-        address: [action.payload, ...state.address],
-      };
-
     case UPDATE_ADDRESS:
       return {
         ...state,

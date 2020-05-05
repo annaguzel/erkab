@@ -13,7 +13,7 @@ class AddChild extends Component {
   handleChange = (event) =>
     this.setState({ [event.target.name]: event.target.value });
 
-  handleRadio = (value) => this.setState({ school: value });
+  handleList = (value) => this.setState({ school: value });
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -57,18 +57,18 @@ class AddChild extends Component {
                 />
               </div>
               <div className="form-group">
-                {this.props.schools.map((school) => (
-                  <label key={school.name}>
-                    <input
-                      type="radio"
-                      value={school.id}
-                      name="school"
-                      key={school.id}
-                      onChange={(event) => this.handleRadio(event.target.value)}
-                    />
-                    {school.name}
-                  </label>
-                ))}
+                <select
+                  name="school"
+                  className="custom-search-select"
+                  onChange={(event) => this.handleList(event.target.value)}
+                >
+                  <option>Select School</option>
+                  {this.props.schools.map((school) => (
+                    <option key={school.id} value={school.id}>
+                      {school.name}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <button type="submit" className="btn btn-info">
