@@ -56,7 +56,7 @@ class Signup extends Component {
                     id="firstname"
                     value={firstname}
                     name="firstname"
-                    placeholder="firstname"
+                    placeholder="First Name"
                     onChange={this.handleChange}
                   />
                 </div>
@@ -68,7 +68,7 @@ class Signup extends Component {
                     id="lastname"
                     value={lastname}
                     name="lastname"
-                    placeholder="lastname"
+                    placeholder="Last Name"
                     onChange={this.handleChange}
                   />
                 </div>
@@ -80,7 +80,7 @@ class Signup extends Component {
                     id="email"
                     value={email}
                     name="email"
-                    placeholder="email"
+                    placeholder="Email"
                     onChange={this.handleChange}
                   />
                 </div>
