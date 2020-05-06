@@ -56,7 +56,7 @@ class AboutUs extends Component {
                     alt="anna"
                   />
                   <h5>Anna A.</h5>
-                  <p className="font-weight-light mb-0">Front-End Developer</p>
+                  <p className="font-weight-light mb-0">Full-Stack Developer</p>
                 </div>
               </div>
               <div className="col-lg-6">
@@ -67,7 +67,7 @@ class AboutUs extends Component {
                     alt="olga"
                   />
                   <h5>Olga H.</h5>
-                  <p className="font-weight-light mb-0">Back-End Developer</p>
+                  <p className="font-weight-light mb-0">Full-Stack Developer</p>
                 </div>
               </div>
             </div>

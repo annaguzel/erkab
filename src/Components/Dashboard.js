@@ -15,14 +15,16 @@ class Dashboard extends Component {
     return (
       <div className="background" style={{ backgroundImage: `url(${bg})` }}>
         <div className="container mt-5 ">
-          <div className="image text-center card">
+          <div className="image text-center card bg-dark text-light">
             <h3 className="mb-4 display-4">Dashboard</h3>
             <ul class="list-group">
               <li class="list-group-item bg-info">
                 User:{this.props.user.username}
               </li>
 
-              <li class="list-group-item">Email:{this.props.user.email}</li>
+              <li style={{ color: "black" }} className="list-group-item">
+                Email:{this.props.user.email}
+              </li>
             </ul>
             <h3 className="my-4">My Children:</h3>
             <table className="mt-3 table bg-light">

@@ -17,18 +17,7 @@ class NavBar extends Component {
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <li className="nav-item">
-                <Link
-                  style={{ color: "#ffea32", fontSize: "1.2rem" }}
-                  to="/aboutus"
-                  className="nav-link font-weight-bold"
-                >
-                  About Us
-                </Link>
-              </li>{" "}
-            </Nav>
-            <Nav>
+            <Nav className="ml-auto">
               <AuthButton />
             </Nav>
           </Navbar.Collapse>

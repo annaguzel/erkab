@@ -36,9 +36,14 @@ class LocationPicking extends Component {
 
   render() {
     return (
-      <div className="text-center card">
-        <h1 className="my-4">Set your location</h1>
-        <h3>Current Address:{this.state.address}</h3>
+      <div className="text-center card bg-dark text-light">
+        <h3 className="mx-3 display-4 my-3">Set Your Location</h3>
+        <ul class="list-group">
+          <li class="list-group-item bg-info">
+            Current Address: {this.state.address}
+          </li>
+        </ul>
+
         <div className="text-center">
           <LocationPicker
             containerElement={<div style={{ height: "100%" }} />}

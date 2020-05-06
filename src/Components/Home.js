@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="container mt-5">
+        <div className="container mt-5 background">
           <div className="image">
             <h3 className="display-3 title">ErKab</h3>
             <h3 className="display-6 mt-3 title">
