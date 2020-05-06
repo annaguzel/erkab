@@ -1,55 +1,44 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import bus from "../images/bus.png";
+import image1 from "../images/image1.jpg";
+import image2 from "../images/image2.jpg";
+import image3 from "../images/image3.jpg";
+import photo1 from "../images/photo1.png";
+import photo2 from "../images/photo2.jpg";
 
 class AboutUs extends Component {
   render() {
     return (
       <div>
         <section className="showcase">
-          <div className="container-fluid p-0">
+          <div className="container-fluid p-0 text-center">
+            <h3 className="display-3 my-5">ErKab</h3>
             <div className="row no-gutters">
               <div
                 className="col-lg-6 order-lg-2 text-white showcase-img"
-                style={{ backgroundImage: "" }}
+                style={{ backgroundImage: `url(${image2})` }}
               ></div>
               <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Fully Responsive Design</h2>
-                <p className="lead mb-0">
-                  When you use a theme created by Start Bootstrap, you know that
-                  the theme will look great on any device, whether it's a phone,
-                  tablet, or desktop the page will behave responsively!
-                </p>
+                <h2>Affordable and Reliable</h2>
               </div>
             </div>
             <div className="row no-gutters">
               <div
                 className="col-lg-6 text-white showcase-img"
-                style={{ backgroundImage: "" }}
+                style={{ backgroundImage: `url(${image1})` }}
               ></div>
               <div className="col-lg-6 my-auto showcase-text">
-                <h2>Updated For Bootstrap 4</h2>
-                <p className="lead mb-0">
-                  Newly improved, and full of great utility classNamees,
-                  Bootstrap 4 is leading the way in mobile responsive web
-                  development! All of the themes on Start Bootstrap are now
-                  using Bootstrap 4!
-                </p>
+                <h2>Save at least 50% of your transportation cost.</h2>
               </div>
             </div>
             <div className="row no-gutters">
               <div
                 className="col-lg-6 order-lg-2 text-white showcase-img"
-                style={{ backgroundImage: "" }}
+                style={{ backgroundImage: `url(${image3})` }}
               ></div>
               <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Easy to Use &amp; Customize</h2>
-                <p className="lead mb-0">
-                  Landing Page is just HTML and CSS with a splash of SCSS for
-                  users who demand some deeper customization options. Out of the
-                  box, just add your content and images, and your new landing
-                  page will be ready to go!
-                </p>
+                <h2>Easy to Use</h2>
               </div>
             </div>
           </div>
@@ -57,47 +46,28 @@ class AboutUs extends Component {
 
         <section className="testimonials text-center bg-light">
           <div className="container">
-            <h2 className="mb-5">What people are saying...</h2>
+            <h2 className="mb-5">Meet the Team</h2>
             <div className="row">
-              <div className="col-lg-4">
+              <div className="col-lg-6">
                 <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                   <img
                     className="img-fluid rounded-circle mb-3"
-                    src="img/testimonials-1.jpg"
-                    alt=""
+                    src={photo2}
+                    alt="anna"
                   />
-                  <h5>Margaret E.</h5>
-                  <p className="font-weight-light mb-0">
-                    "This is fantastic! Thanks so much guys!"
-                  </p>
+                  <h5>Anna A.</h5>
+                  <p className="font-weight-light mb-0">Front-End Developer</p>
                 </div>
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-6">
                 <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                   <img
                     className="img-fluid rounded-circle mb-3"
-                    src="img/testimonials-2.jpg"
-                    alt=""
+                    src={photo1}
+                    alt="olga"
                   />
-                  <h5>Fred S.</h5>
-                  <p className="font-weight-light mb-0">
-                    "Bootstrap is amazing. I've been using it to create lots of
-                    super nice landing pages."
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="testimonial-item mx-auto mb-5 mb-lg-0">
-                  <img
-                    className="img-fluid rounded-circle mb-3"
-                    src="img/testimonials-3.jpg"
-                    alt=""
-                  />
-                  <h5>Sarah W.</h5>
-                  <p className="font-weight-light mb-0">
-                    "Thanks so much for making these free resources available to
-                    us!"
-                  </p>
+                  <h5>Olga H.</h5>
+                  <p className="font-weight-light mb-0">Back-End Developer</p>
                 </div>
               </div>
             </div>

@@ -1,33 +1,42 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import LocationPicking from "./LocationPicking";
+import ChildRow from "./ChildRow";
+import bg from "../images/bg.jpg";
 
 class Dashboard extends Component {
   render() {
+    if (!this.props.user) return <Redirect to="/" />;
+
+    const childRows = this.props.children.map((child) => (
+      <ChildRow key={child.name + child.id} child={child} />
+    ));
     return (
-      <div>
-        <div className="container mt-5">
-          <div className="image">
-            <h3 className="display-4 title">My Dashboard:</h3>
-            <h3 className="display-6 mt-3 title">
-              User:{this.props.user.username}
-            </h3>
-            <h3 className="display-6 mt-3 title">
-              Email:{this.props.user.email}
-            </h3>
+      <div className="background" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="container mt-5 ">
+          <div className="image text-center card">
+            <h3 className="mb-4 display-4">Dashboard</h3>
+            <ul class="list-group">
+              <li class="list-group-item bg-info">
+                User:{this.props.user.username}
+              </li>
 
-            <h3>My Children:</h3>
-
-            {this.props.children.map((child) => (
-              <div>
-                <h4>{child.name}</h4>
-                <h4>{child.dob}</h4>
-              </div>
-            ))}
+              <li class="list-group-item">Email:{this.props.user.email}</li>
+            </ul>
+            <h3 className="my-4">My Children:</h3>
+            <table className="mt-3 table bg-light">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Date of Birth</th>
+                </tr>
+              </thead>
+              <tbody>{childRows}</tbody>
+            </table>
 
             <Link to="/addchild">
-              <button type="button" className="btn btn-outline-info mt-4">
+              <button type="button" className="btn btn-info my-4">
                 Add Child
               </button>
             </Link>
@@ -47,4 +56,5 @@ const mapStateToProps = (state) => {
     user: state.user,
   };
 };
+
 export default connect(mapStateToProps)(Dashboard);

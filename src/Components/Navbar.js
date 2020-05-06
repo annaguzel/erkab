@@ -8,7 +8,7 @@ class NavBar extends Component {
   render() {
     return (
       <header>
-        <Navbar collapseOnSelect expand="lg">
+        <Navbar bg="dark" collapseOnSelect expand="lg">
           <Navbar.Brand>
             <Link to={"/"} className="navbar-brand">
               <img className="logo d-inline" src={logo} alt="" />

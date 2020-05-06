@@ -36,8 +36,8 @@ class LocationPicking extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Set your location:</h1>
+      <div className="text-center card">
+        <h1 className="my-4">Set your location</h1>
         <h3>Current Address:{this.state.address}</h3>
         <div className="text-center">
           <LocationPicker
@@ -49,7 +49,7 @@ class LocationPicking extends Component {
           <button
             type="submit"
             onClick={() => this.submitAddress()}
-            className="btn btn-info mt-4"
+            className="btn btn-info my-4"
           >
             Set Address
           </button>
